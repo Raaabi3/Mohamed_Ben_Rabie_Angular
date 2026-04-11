@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "username": "Wiem Aouididi",
+      "email": "wiem.aouididi@example.com",
+      "id": "4"
+    },
+    {
+      "username": "Ranim",
+      "email": "ranim.davis@example.com",
+      "gender": "female",
+      "id": "5"
+    },
+    {
+      "username": "rayhane",
+      "email": "rayhane@gmail.com",
+      "gender": "female",
+      "id": "MFE0MOC"
+    }
+  ]
+}

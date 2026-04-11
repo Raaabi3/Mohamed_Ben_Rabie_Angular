@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="signupForm">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            formControlName="username">
+          <span *ngIf="username?.errors?.['required']">Username is required!!</span>
+          <span *ngIf="username?.errors?.['minlength']">Username must be at least 5</span>
+        </div>
+        <div class="form-group">
+          <label for="email">email</label>
+          <input
+            type="text"
+            id="email"
+            class="form-control"
+            [formControlName]="'email'">
+          <span *ngIf="email?.errors?.['required']">Email is required!!</span>
+          <span *ngIf="email?.errors?.['email']">Email must be valid</span>
+        </div>
+        <!--
+        <<div [formGroupName]="'userdata'">
+          <div class="form-group">
+            <label for="fb">Facebook</label>
+            <input
+              type="text"
+              id="fb"
+              class="form-control"
+              formControlName="fb">
+            <span *ngIf="signupForm.get('userdata.fb')?.invalid && signupForm.get('userdata.fb')?.touched">Facebook is required!!</span>
+          </div>>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              type="text"
+              id="age"
+              class="form-control"
+              formControlName="age">
+            <span *ngIf="signupForm.get('userdata.age')?.invalid && signupForm.get('userdata.age')?.touched">Age must be at least 18!!</span>
+          </div>
+        </div>
+        -->>
+        <div class="radio" *ngFor="let gender of genders">
+          <label>
+            <input
+              type="radio"
+              [value]="gender"
+              formControlName="gender">{{ gender }}
+          </label>
+        </div>
+        <button [disabled]="signupForm.invalid" class="btn btn-primary" type="submit" (click)="adduser()">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

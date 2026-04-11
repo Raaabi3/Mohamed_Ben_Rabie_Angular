@@ -1,0 +1,18 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Username</th>
+    <th scope="col">Email</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of listUsers">
+    <td>{{ user.id }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.email }}</td>
+    <td><button class="btn btn-danger" (click)="delete(user.id)">Delete</button></td>
+  </tr>
+  </tbody>
+</table>

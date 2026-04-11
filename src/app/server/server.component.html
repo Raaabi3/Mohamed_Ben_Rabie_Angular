@@ -1,0 +1,19 @@
+<input type="text"
+       [formControl]="server">
+<span *ngIf="server.invalid && server.untouched">Server name is required!!</span>
+<!--<button class="btn btn-primary" [disabled]="serverCreationStatus" (click)="onCreateServer()" >Add Server</button>-->
+<!--<p>{{serverName | uppercase}}</p>-->
+<!--<p>Hi the server with an ID {{ serverID }} is {{ getStatus() }} <p>-->
+<!--<p>{{serverCreation}}</p>-->
+<!--&lt;!&ndash;<p *ngIf="serverCreated; else noserver;">Server was created, server name is {{serverName}}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;<ng-template #noserver>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p>No Server was created!!</p>&ndash;&gt;-->
+<!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
+<!--<div *ngFor="let server of servers">-->
+<!--  <p>{{server}}</p>-->
+<!--</div>-->
+<!--<div [ngSwitch]="serverCreation">-->
+<!--  <p *ngSwitchCase="'not created'">No Server was created</p>-->
+<!--  <p *ngSwitchCase="'created'">Server was created</p>-->
+<!--  <p *ngSwitchDefault>Unknown Status</p>-->
+<!--</div>-->
