@@ -1,0 +1,15 @@
+<div class="card mt-3" *ngIf="suggestion; else notFoundSuggestion">
+	<div class="card-body">
+		<h4 class="card-title">{{ suggestion.title }}</h4>
+		<p class="card-text">{{ suggestion.description }}</p>
+		<p class="text-muted">Suggestion ID: {{ suggestion.id }}</p>
+		<a class="btn btn-outline-secondary" [routerLink]="['/suggestions']">Back to list</a>
+	</div>
+</div>
+
+<ng-template #notFoundSuggestion>
+	<div class="alert alert-warning mt-3">
+		Suggestion not found.
+		<a class="btn btn-outline-secondary ms-2" [routerLink]="['/suggestions']">Back to list</a>
+	</div>
+</ng-template>

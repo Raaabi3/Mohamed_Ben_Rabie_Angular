@@ -15,10 +15,22 @@ import { ListUsersComponent } from './list-users/list-users.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
+  {
+    path: 'suggestions',
+    loadChildren: () => import('./features/suggestions/suggestions.module').then((m) => m.SuggestionsModule)
+  },
+  {
+    path: 'listSuggestion',
+    loadChildren: () => import('./features/suggestions/suggestions.module').then((m) => m.SuggestionsModule)
+  },
+  {
+    path: 'users',
+    loadChildren: () => import('./features/users/users.module').then((m) => m.UsersModule)
+  },
   {path: 'server', component: ServerComponent},
   {path: 'servers', component: ServersComponent},
   {
-    path: 'users', component: UsersComponent, children: [
+    path: 'users-dashboard', component: UsersComponent, children: [
       {
         path: 'activity', component: ActivityComponent
       },
