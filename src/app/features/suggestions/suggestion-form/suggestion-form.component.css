@@ -1,0 +1,10 @@
+.card {
+	max-width: 760px;
+	margin: 0 auto;
+	background-color: #f5f7fa;
+	border: 1px solid #e2e6ea;
+}
+
+.form-label {
+	font-weight: 500;
+}

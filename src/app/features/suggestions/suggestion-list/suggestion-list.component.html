@@ -1,9 +1,14 @@
+<div class="d-flex justify-content-end mb-3">
+	<button class="btn btn-success" [routerLink]="['new']">Ajouter suggestion</button>
+</div>
+
 <div class="list-group">
 	<div class="list-group-item" *ngFor="let suggestion of suggestions">
 		<div class="d-flex justify-content-between align-items-center">
 			<div>
 				<h5 class="mb-1">{{ suggestion.title }}</h5>
 				<p class="mb-1 text-muted">{{ suggestion.description }}</p>
+				<small class="text-secondary">Categorie: {{ suggestion.category }} | Status: {{ suggestion.status }}</small>
 			</div>
 			<button class="btn btn-primary" [routerLink]="[suggestion.id]">Details</button>
 		</div>

@@ -1,14 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Suggestion } from '../../../../models/suggestion';
+import { SuggestionsService } from '../services/suggestions.service';
 
 @Component({
   selector: 'app-suggestion-list',
   templateUrl: './suggestion-list.component.html',
   styleUrl: './suggestion-list.component.css'
 })
-export class SuggestionListComponent {
-  suggestions = [
-    { id: 1, title: 'Dark mode', description: 'Add a dark theme option for users.' },
-    { id: 2, title: 'Email notifications', description: 'Notify users for important updates.' },
-    { id: 3, title: 'Profile picture', description: 'Allow users to upload avatars.' }
-  ];
+export class SuggestionListComponent implements OnInit {
+  suggestions: Suggestion[] = [];
+
+  constructor(private suggestionsService: SuggestionsService) {}
+
+  ngOnInit(): void {
+    this.suggestions = this.suggestionsService.getSuggestions();
+  }
 }

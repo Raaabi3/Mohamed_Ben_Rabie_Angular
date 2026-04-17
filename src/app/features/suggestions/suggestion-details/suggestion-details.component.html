@@ -2,7 +2,10 @@
 	<div class="card-body">
 		<h4 class="card-title">{{ suggestion.title }}</h4>
 		<p class="card-text">{{ suggestion.description }}</p>
-		<p class="text-muted">Suggestion ID: {{ suggestion.id }}</p>
+		<p class="mb-1"><strong>Categorie:</strong> {{ suggestion.category }}</p>
+		<p class="mb-1"><strong>Date:</strong> {{ suggestion.date | date:'dd/MM/yyyy' }}</p>
+		<p class="mb-1"><strong>Status:</strong> {{ suggestion.status }}</p>
+		<p class="text-muted">Suggestion ID: {{ suggestion.id }} | Likes: {{ suggestion.nbLikes }}</p>
 		<a class="btn btn-outline-secondary" [routerLink]="['/suggestions']">Back to list</a>
 	</div>
 </div>

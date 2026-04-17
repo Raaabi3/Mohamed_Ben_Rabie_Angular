@@ -1,0 +1,55 @@
+<div class="card p-4 mt-3">
+	<form [formGroup]="suggestionForm" (ngSubmit)="submit()">
+		<div class="mb-3">
+			<label class="form-label">Titre :</label>
+			<input type="text" class="form-control" formControlName="title" />
+			<small class="text-danger" *ngIf="title?.touched && title?.errors?.['required']">
+				Le titre est obligatoire.
+			</small>
+			<small class="text-danger d-block" *ngIf="title?.touched && title?.errors?.['minlength']">
+				Le titre doit contenir au minimum 5 caracteres.
+			</small>
+			<small class="text-danger d-block" *ngIf="title?.touched && title?.errors?.['pattern']">
+				Le titre doit commencer par une majuscule et contenir uniquement des lettres.
+			</small>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Description :</label>
+			<textarea rows="4" class="form-control" formControlName="description"></textarea>
+			<small class="text-danger" *ngIf="description?.touched && description?.errors?.['required']">
+				La description est obligatoire.
+			</small>
+			<small class="text-danger d-block" *ngIf="description?.touched && description?.errors?.['minlength']">
+				La description doit contenir au minimum 30 caracteres.
+			</small>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Categorie :</label>
+			<select class="form-select" formControlName="category">
+				<option value="">-- Selectionnez une categorie --</option>
+				<option *ngFor="let categoryItem of categories" [value]="categoryItem">
+					{{ categoryItem }}
+				</option>
+			</select>
+			<small class="text-danger" *ngIf="category?.touched && category?.errors?.['required']">
+				La categorie est obligatoire.
+			</small>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Date :</label>
+			<input type="text" class="form-control" formControlName="date" readonly />
+		</div>
+
+		<div class="mb-4">
+			<label class="form-label">Status :</label>
+			<input type="text" class="form-control" formControlName="status" readonly />
+		</div>
+
+		<button type="submit" class="btn btn-primary" [disabled]="suggestionForm.invalid">
+			Soumettre
+		</button>
+	</form>
+</div>
